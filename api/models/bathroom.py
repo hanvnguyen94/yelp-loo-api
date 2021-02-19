@@ -7,9 +7,9 @@ class Bathroom(models.Model):
   # https://docs.djangoproject.com/en/3.0/ref/models/fields/
 
   name = models.CharField(max_length=100)
+  photoUrl = models.CharField(max_length=500)
   location = models.CharField(max_length=100)
   description = models.CharField(max_length=100)
-  photoUrl = models.URLField(max_length=100)
   owner = models.ForeignKey(
       get_user_model(),
       on_delete=models.CASCADE
@@ -24,7 +24,7 @@ class Bathroom(models.Model):
     return {
         'id': self.id,
         'name': self.name,
+        'photoUrl': self.photoUrl,
         'location': self.location,
         'description': self.description,
-        'photoUrl': self.photoUrl
     }

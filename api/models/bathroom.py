@@ -15,6 +15,9 @@ class Bathroom(models.Model):
       on_delete=models.CASCADE
   )
 
+  created_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(auto_now=True)
+
   def __str__(self):
     # This must return a string
     return f"Bathroom {self.name} location is '{self.location}', here is the link to bathroom's picture {self.photoUrl}."
@@ -27,4 +30,5 @@ class Bathroom(models.Model):
         'photoUrl': self.photoUrl,
         'location': self.location,
         'description': self.description,
+        'created_at': self.created_at,
     }

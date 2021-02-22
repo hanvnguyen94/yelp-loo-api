@@ -7,7 +7,7 @@ from .models.user import User
 class BathroomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bathroom
-        fields = ('id', 'name', 'location', 'description', 'photoUrl', 'owner')
+        fields = ('id', 'name', 'location', 'description', 'photoUrl', 'created_at', 'owner')
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation

@@ -38,9 +38,9 @@ else:
     # Set debug to false
     DEBUG = False
     # Only allow the `CLIENT_ORIGIN` for CORS
-    CORS_ORIGIN_WHITELIST = (
-        'https://hanvnguyen94.github.io'
-    )
+    CORS_ORIGIN_WHITELIST = [
+        os.getenv('CLIENT_ORIGIN')
+    ]
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
